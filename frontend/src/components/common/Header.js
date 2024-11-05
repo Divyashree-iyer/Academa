@@ -1,18 +1,35 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography, Button, IconButton } from '@mui/material';
+import { AppBar, Toolbar, Typography, Button, IconButton, Box } from '@mui/material';
+import { Link as RouterLink } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 
 const Header = () => {
   return (
     <AppBar position="static">
       <Toolbar>
-        <IconButton edge="start" color="inherit" aria-label="menu">
-          <MenuIcon />
+        <IconButton
+          size="large"
+          edge="start"
+          color="inherit"
+          aria-label="menu"
+          sx={{ mr: 2 }}
+        >
         </IconButton>
-        <Typography variant="h6" style={{ flexGrow: 1 }}>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           Academa
         </Typography>
-        <Button color="inherit">Login</Button>
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <Button color="inherit" component={RouterLink} to="/">
+            Dashboard
+          </Button>
+          <Button color="inherit" component={RouterLink} to="/create-plan">
+            Create Plan
+          </Button>
+          <Button color="inherit" component={RouterLink} to="/chatbot">
+            Chatbot
+          </Button>
+          <Button color="inherit">Login</Button>
+        </Box>
       </Toolbar>
     </AppBar>
   );

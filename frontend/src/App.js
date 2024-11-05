@@ -13,8 +13,8 @@ import theme from './theme';
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Header />
       <Router>
+        <Header />
         <div className="App">
           <Routes>
             <Route path="/" element={<Dashboard />} />
