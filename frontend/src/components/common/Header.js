@@ -19,7 +19,7 @@ const Header = () => {
           Academa
         </Typography>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <Button color="inherit" component={RouterLink} to="/">
+          <Button color="inherit" component={RouterLink} to="/dashboard">
             Dashboard
           </Button>
           <Button color="inherit" component={RouterLink} to="/create-plan">

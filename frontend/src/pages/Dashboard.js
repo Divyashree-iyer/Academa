@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, Container } from '@mui/material';
-import CurrentPlanSummary from '../components/dashboard/CurrentPlanSummary';
+import LearningPlan from '../components/dashboard/LearningPlan';
 import ProgressTracker from '../components/dashboard/ProgressTracker';
 import Timeline from '../components/dashboard/Timeline';
 import BadgeDisplay from '../components/dashboard/BadgeDisplay';
@@ -10,13 +10,58 @@ import QuickQuiz from '../components/dashboard/QuickQuiz';
 
 // You would typically fetch this data from an API or state management system
 const mockData = {
-  currentPlan: {
-    goal: "Master React and Node.js",
-    progress: 65,
-    upcomingMilestones: [
-      { title: "Complete React Hooks", dueDate: "2023-11-15" },
-      { title: "Build a Full-Stack App", dueDate: "2023-12-01" },
-    ],
+  learningPlan: {
+    "Week 1": {
+      "Objectives": [
+        "Understand the core concepts of machine learning.",
+        "Gain familiarity with key algorithms and their applications.",
+        "Develop a strong foundation in Python for data science."
+      ],
+      "Topics": [
+        "Introduction to Machine Learning",
+        "Supervised Learning (Regression, Classification)",
+        "Unsupervised Learning (Clustering, Dimensionality Reduction)",
+        "Data Preprocessing and Feature Engineering",
+        "Python Libraries (NumPy, Pandas, Matplotlib, Scikit-learn)"
+      ],
+      "Tasks": [
+        "Complete interactive tutorials on machine learning fundamentals (e.g., Kaggle, Coursera).",
+        "Build a simple regression model using Scikit-learn.",
+        "Visualize data and model results using Matplotlib.",
+        "Create a small data cleaning and preprocessing project."
+      ],
+      "Resources": [
+        "https://developers.google.com/machine-learning/crash-course",
+        "https://www.amazon.com/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1492032937",
+        "https://www.datacamp.com/courses/machine-learning-with-python"
+      ]
+    },
+    "Week 2": {
+      "Objectives": [
+        "Week 2 things",
+        "Gain familiarity with key algorithms and their applications.",
+        "Develop a strong foundation in Python for data science."
+      ],
+      "Topics": [
+        "Introduction to Machine Learning",
+        "Supervised Learning (Regression, Classification)",
+        "Unsupervised Learning (Clustering, Dimensionality Reduction)",
+        "Data Preprocessing and Feature Engineering",
+        "Python Libraries (NumPy, Pandas, Matplotlib, Scikit-learn)"
+      ],
+      "Tasks": [
+        "Complete interactive tutorials on machine learning fundamentals (e.g., Kaggle, Coursera).",
+        "Build a simple regression model using Scikit-learn.",
+        "Visualize data and model results using Matplotlib.",
+        "Create a small data cleaning and preprocessing project."
+      ],
+      "Resources": [
+        "https://developers.google.com/machine-learning/crash-course",
+        "https://www.amazon.com/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1492032937",
+        "https://www.datacamp.com/courses/machine-learning-with-python"
+      ]
+    },
+    // Week 2, 3, and 4 data follow here...
   },
   progressData: {
     overallProgress: 65,
@@ -59,7 +104,7 @@ const Dashboard = () => {
     <Container maxWidth="lg">
       <Grid container spacing={3}>
         <Grid item xs={12} md={6}>
-          <CurrentPlanSummary plan={mockData.currentPlan} />
+          <LearningPlan plan={mockData.learningPlan} />
         </Grid>
         <Grid item xs={12} md={6}>
           <ProgressTracker 

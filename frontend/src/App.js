@@ -17,7 +17,7 @@ function App() {
         <Header />
         <div className="App">
           <Routes>
-            <Route path="/" element={<Dashboard />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/create-plan" element={<PlanCreation />} />
             <Route path="/chatbot" element={<Chatbot />} />
           </Routes>

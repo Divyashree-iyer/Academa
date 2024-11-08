@@ -1,5 +1,6 @@
 import React from 'react';
 import { List, ListItem, ListItemText, Paper, Typography } from '@mui/material';
+import ReactMarkdown from 'react-markdown';
 
 const MessageList = ({ messages }) => {
   return (
@@ -14,10 +15,10 @@ const MessageList = ({ messages }) => {
                   variant="body1"
                   color={message.sender === 'user' ? 'primary' : 'secondary'}
                 >
-                  {message.sender === 'user' ? 'You' : 'Academa Bot'}
+                    {message.sender === 'user' ? 'You' : 'Academa Bot'}
                 </Typography>
               }
-              secondary={message.text}
+              secondary={<ReactMarkdown>{message.text}</ReactMarkdown>}
             />
           </ListItem>
         ))}

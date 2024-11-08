@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Grid } from '@mui/material';
-import PlanForm from '../components/plan/PlanForm';
+import PlanChat from '../components/plan/PlanChat';
 import CurriculumDisplay from '../components/plan/CurriculumDisplay';
 import LoadingSpinner from '../components/common/LoadingSpinner';
 import ErrorMessage from '../components/common/ErrorMessage';
@@ -42,7 +42,7 @@ const PlanCreation = () => {
     <Container maxWidth="lg">
       <Grid container spacing={3}>
         <Grid item xs={12} md={6}>
-          <PlanForm onSubmit={handlePlanSubmit} />
+          <PlanChat onSubmit={handlePlanSubmit} />
         </Grid>
         <Grid item xs={12} md={6}>
           {loading && <LoadingSpinner />}

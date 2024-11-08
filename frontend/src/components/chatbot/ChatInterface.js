@@ -6,23 +6,32 @@ import MessageInput from './MessageInput';
 const ChatInterface = () => {
   const [messages, setMessages] = useState([]);
 
-  const handleSendMessage = (text) => {
+
+ 
+  const handleSendMessage = async (text) => {
     const newMessage = { text, sender: 'user' };
     setMessages([...messages, newMessage]);
-
-    // Simulate bot response
-    setTimeout(() => {
-      const botMessage = { text: "I'm here to help! What would you like to know about your STEM curriculum?", sender: 'bot' };
+    fetch('http://localhost:5000/conversation/chat', { 
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ message: text }) 
+    })
+    .then(response => response.json()) 
+    .then(data => {
+      const botMessage = { text: data.response, sender: 'bot' };
       setMessages(prevMessages => [...prevMessages, botMessage]);
-    }, 1000);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
   };
+  
 
   return (
     <Card>
       <CardContent>
-        <Typography variant="h5" component="h2" gutterBottom>
-          Chat with Academa Bot
-        </Typography>
         <MessageList messages={messages} />
         <MessageInput onSendMessage={handleSendMessage} />
       </CardContent>
