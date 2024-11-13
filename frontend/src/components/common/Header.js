@@ -25,9 +25,9 @@ const Header = () => {
           <Button color="inherit" component={RouterLink} to="/create-plan">
             Create Plan
           </Button>
-          <Button color="inherit" component={RouterLink} to="/chatbot">
+          {/* <Button color="inherit" component={RouterLink} to="/chatbot">
             Chatbot
-          </Button>
+          </Button> */}
           <Button color="inherit">Login</Button>
         </Box>
       </Toolbar>

@@ -19,7 +19,7 @@ function App() {
           <Routes>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/create-plan" element={<PlanCreation />} />
-            <Route path="/chatbot" element={<Chatbot />} />
+            {/* <Route path="/chatbot" element={<Chatbot />} /> */}
           </Routes>
         </div>
       </Router>

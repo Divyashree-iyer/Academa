@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Card, CardContent, Typography } from '@mui/material';
+import React, { useState } from 'react';
+import { Card, CardContent } from '@mui/material';
 import MessageList from './MessageList';
 import MessageInput from './MessageInput';
 
